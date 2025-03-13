@@ -19,6 +19,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}  
           key: ${{ secrets.SSH_PRIVATE_KEY }}  
           script: |  
-            cd ~/my-flask-portfolio  
+            cd ~/portfolio  
             git pull origin main  
             sudo systemctl restart flask-app  # If using a service (explained below)
