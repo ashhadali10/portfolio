@@ -1,14 +1,18 @@
-from flask import Flask  
-app = Flask(__name__)  
+from flask import Flask, render_template
 
-#homepage
-@app.route('/')  
-def home():  
-    return "Hello, khan khan devops! This is my DevOps Portfolio!"  
-# about page
+app = Flask(__name__)
+
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
+# Homepage
+@app.route('/')
+def home():
+    return render_template('index.html')  # Use index.html for the homepage
+
+# About page
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-if __name__ == '__main__':  
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
