@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">My Projects</h2>
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">CI/CD Pipeline Automation</h5>
+                <p class="card-text">Automated CI/CD pipelines using Jenkins, GitHub Actions, and Docker.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Kubernetes Cluster Setup</h5>
+                <p class="card-text">Deployed scalable Kubernetes clusters using Terraform and Helm.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Cloud Security Automation</h5>
+                <p class="card-text">Implemented DevSecOps practices with tools like Snyk and Aqua Trivy.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

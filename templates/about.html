@@ -1,11 +1,22 @@
-{% extends "base.html" %}  
+{% extends "base.html" %}
 
-{% block title %}About Me{% endblock %}  
+{% block title %}About Me{% endblock %}
 
-{% block content %}  
-<h1>About Me</h1>  
-<p>  
-    I have 6000+  ali khan ashhad years years of experience in AWS, Terraform, and Kubernetes.  
-    I love automating workflows and securing cloud infrastructure.  
-</p>  
-{% endblock %}  
+{% block content %}
+<div class="row mt-5">
+    <div class="col-md-4">
+        <img src="{{ url_for('static', filename='profile.jpg') }}" class="img-fluid rounded-circle" alt="Profile Picture">
+    </div>
+    <div class="col-md-8">
+        <h2>About Me</h2>
+        <p>I have 5+ years of experience in AWS, Terraform, and Kubernetes. I love automating workflows and securing cloud infrastructure.</p>
+        <h3>Skills</h3>
+        <ul>
+            <li>Kubernetes, Docker</li>
+            <li>Terraform, Ansible</li>
+            <li>AWS, Oracle Cloud</li>
+            <li>CI/CD Pipelines</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
