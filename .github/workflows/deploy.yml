@@ -7,7 +7,6 @@ on:
 jobs:  
   deploy:  
     runs-on: ubuntu-latest  
-
     steps:  
       - name: Checkout code  
         uses: actions/checkout@v4  
@@ -19,6 +18,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}  
           key: ${{ secrets.SSH_PRIVATE_KEY }}  
           script: |  
-            cd ~/portfolio  
+            cd ~/portfolio || exit  
             git pull origin main  
-            sudo systemctl restart flask-app  # If using a service (explained below)
+            sudo systemctl restart flask-app
