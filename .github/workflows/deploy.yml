@@ -1,0 +1,24 @@
+name: Deploy to Oracle Cloud  
+
+on:  
+  push:  
+    branches: [main]  
+
+jobs:  
+  deploy:  
+    runs-on: ubuntu-latest  
+
+    steps:  
+      - name: Checkout code  
+        uses: actions/checkout@v4  
+
+      - name: Deploy to Oracle Cloud  
+        uses: appleboy/ssh-action@v1.1.0  
+        with:  
+          host: ${{ secrets.SSH_HOST }}  
+          username: ${{ secrets.SSH_USER }}  
+          key: ${{ secrets.SSH_PRIVATE_KEY }}  
+          script: |  
+            cd ~/my-flask-portfolio  
+            git pull origin main  
+            sudo systemctl restart flask-app  # If using a service (explained below)
